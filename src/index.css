@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * ============================================================================
+ * COLOR SYSTEM - CENTRALIZED COLOR MANAGEMENT
+ * ============================================================================
+ * 
+ * To change colors site-wide, update the color palette variables below.
+ * All colors are defined in HSL format: hue saturation% lightness%
+ * 
+ * HOW TO CHANGE COLORS:
+ * 1. Update the palette variables (--color-blue-*) with your new colors
+ * 2. Or directly change semantic variables (--primary, --secondary, etc.)
+ * 
+ * COLOR FORMAT:
+ * - Use HSL format: "hue saturation% lightness%" (e.g., "200 100% 50%")
+ * - Convert hex to HSL using: https://htmlcolors.com/hex-to-hsl
+ * 
+ * CURRENT PALETTE:
+ * - Dark Navy: #03045E
+ * - Medium Blue: #0077B6  
+ * - Bright Cyan: #00B4D8
+ * - Light Sky: #90E0EF
+ * - Pale Blue: #CAF0F8
+ * ============================================================================
+ */
+
+@layer base {
+  :root {
+    /* ============================================
+       COLOR PALETTE - Change colors here to update entire website
+       ============================================ */
+    
+    /* Blue Palette */
+    --color-blue-dark: 240 100% 19%;      /* #03045E - Dark Navy Blue */
+    --color-blue-medium: 200 100% 36%;    /* #0077B6 - Medium Blue */
+    --color-blue-bright: 190 100% 42%;    /* #00B4D8 - Bright Cyan-Blue */
+    --color-blue-light: 190 75% 75%;      /* #90E0EF - Light Sky Blue */
+    --color-blue-pale: 191 77% 88%;       /* #CAF0F8 - Very Pale Blue */
+
+    /* Semantic Color Mappings - Update these to change site-wide colors */
+    --primary: var(--color-blue-medium);           /* Main brand color */
+    --primary-foreground: 0 0% 100%;                /* Text on primary */
+    
+    --secondary: var(--color-blue-bright);         /* Secondary actions */
+    --secondary-foreground: 0 0% 100%;             /* Text on secondary */
+    
+    --accent: var(--color-blue-light);             /* Accent highlights */
+    --accent-foreground: var(--color-blue-dark);   /* Text on accent */
+    
+    --success: 194 72% 59%;                         /* Success states - #48cae4 */
+    --success-foreground: 0 0% 0%;                  /* Text on success */
+    
+    --destructive: 358 100% 60%;                   /* Error/danger states */
+    --destructive-foreground: 0 0% 100%;           /* Text on destructive */
+
+    /* Background Colors */
+    --background: 191 77% 95%;                     /* Main background (pale blue tint) */
+    --foreground: var(--color-blue-dark);          /* Main text color */
+    
+    --card: 0 0% 100%;                             /* Card backgrounds */
+    --card-foreground: var(--color-blue-dark);     /* Card text */
+    
+    --popover: 0 0% 100%;                          /* Popover backgrounds */
+    --popover-foreground: var(--color-blue-dark);  /* Popover text */
+    
+    --muted: var(--color-blue-pale);               /* Muted backgrounds */
+    --muted-foreground: var(--color-blue-medium);  /* Muted text */
+
+    /* UI Elements */
+    --border: var(--color-blue-dark);               /* Borders */
+    --input: var(--color-blue-dark);               /* Input borders */
+    --ring: var(--color-blue-medium);              /* Focus rings */
+
+    /* Status Tag Colors */
+    --tag-on-trip: 6 100% 60%;              /* #ff563f - On Trip */
+    --tag-on-trip-foreground: 0 0% 100%;
+    --tag-in-shop: 31 100% 55%;             /* #ff9719 - In Shop */
+    --tag-in-shop-foreground: 0 0% 0%;
+    --tag-available: 84 68% 47%;             /* #8ac926 - Available (green) */
+    --tag-available-foreground: 0 0% 0%;
+    --tag-available-gold: 43 97% 64%;       /* #fcbf49 - Available (gold) - alternate */
+    --tag-available-gold-foreground: 0 0% 0%;
+
+    /* Sidebar Colors */
+    --sidebar-background: var(--color-blue-medium);      /* Sidebar background */
+    --sidebar-foreground: 0 0% 100%;                     /* Sidebar text */
+    --sidebar-primary: var(--color-blue-bright);         /* Sidebar primary elements */
+    --sidebar-primary-foreground: 0 0% 100%;             /* Text on sidebar primary */
+    --sidebar-accent: var(--color-blue-bright);         /* Sidebar hover/accent */
+    --sidebar-accent-foreground: 0 0% 100%;              /* Text on sidebar accent */
+    --sidebar-border: 0 0% 100%;                        /* Sidebar borders */
+    --sidebar-ring: var(--color-blue-bright);            /* Sidebar focus rings */
+
+    /* Other Settings */
+    --radius: 4px;
+    --shadow-offset: 4px;
+    --shadow-color: var(--color-blue-dark);
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  .dark {
+    /* Dark Theme Palette - #E3F2FD, #BBDEFB, #90CAF9, #64B5F6, #42A5F5 */
+    --color-dark-blue-pale: 210 80% 94%;           /* #E3F2FD - Lightest */
+    --color-dark-blue-light: 210 80% 86%;         /* #BBDEFB */
+    --color-dark-blue-mid: 207 92% 77%;           /* #90CAF9 */
+    --color-dark-blue-medium: 207 89% 68%;        /* #64B5F6 */
+    --color-dark-blue-vibrant: 207 91% 61%;       /* #42A5F5 - Darkest */
+
+    --background: 0 0% 0%;                        /* Black background */
+    --foreground: var(--color-dark-blue-pale);    /* Light text */
+    
+    --card: 0 0% 6%;                              /* Dark cards */
+    --card-foreground: var(--color-dark-blue-pale);
+    
+    --popover: 0 0% 6%;                           /* Dark popovers */
+    --popover-foreground: var(--color-dark-blue-pale);
+    
+    --primary: var(--color-dark-blue-vibrant);     /* #42A5F5 */
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: var(--color-dark-blue-medium);    /* #64B5F6 */
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 10%;                            /* Muted backgrounds */
+    --muted-foreground: var(--color-dark-blue-mid);
+    
+    --accent: var(--color-dark-blue-mid);          /* #90CAF9 */
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 358 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 194 72% 59%;
+    --success-foreground: 0 0% 0%;
+
+    --border: var(--color-dark-blue-mid);
+    --input: var(--color-dark-blue-mid);
+    --ring: var(--color-dark-blue-vibrant);
+
+    --shadow-color: 0 0% 20%;
+
+    --sidebar-background: 0 0% 4%;                 /* Near-black sidebar */
+    --sidebar-foreground: var(--color-dark-blue-pale);
+    --sidebar-primary: var(--color-dark-blue-vibrant);
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: var(--color-dark-blue-medium);
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: var(--color-dark-blue-mid);
+    --sidebar-ring: var(--color-dark-blue-vibrant);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-heading);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .neu-border {
+    @apply border-[3px] border-foreground;
+  }
+
+  .neu-shadow {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px hsl(var(--shadow-color));
+  }
+
+  .neu-shadow-lg {
+    box-shadow: 8px 8px 0px 0px hsl(var(--shadow-color));
+  }
+
+  .neu-card {
+    @apply neu-border neu-shadow rounded-[var(--radius)] bg-card text-card-foreground;
+  }
+
+  .neu-press {
+    @apply transition-all duration-100;
+  }
+
+  .neu-press:active {
+    transform: translate(var(--shadow-offset), var(--shadow-offset));
+    box-shadow: 0px 0px 0px 0px hsl(var(--shadow-color));
+  }
+
+  .neu-input {
+    @apply neu-border rounded-[var(--radius)] bg-background px-4 py-3 text-base font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground;
+  }
+
+  .neu-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-bold uppercase tracking-wider neu-border;
+  }
+}
